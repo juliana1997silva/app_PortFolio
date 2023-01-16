@@ -1,0 +1,109 @@
+import styled from "styled-components";
+
+export const Container = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    h1 {
+      font-size: 35px;
+      line-height: 57px;
+      font-weight: 700;
+      color: #8e01a7;
+    }
+  }
+
+  .containerSkills {
+    width: 100%;
+    max-width: 1156px;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #8e01a7;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      color: #fff;
+      li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+
+  .icon {
+    text-decoration: none;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    svg {
+      transition: 0.3s ease;
+      width: 100px;
+      height: 100px;
+
+      &:hover {
+        color: #fff;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+      }
+    }
+  }
+
+  .cardSkills {
+    width: 100%;
+    max-width: 300px;
+    height: 390px;
+    padding: 20px;
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a0c;
+    border-radius: 8px;
+    -webkit-box-shadow: 15px 13px 13px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 13px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 13px 13px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  @media (max-width: 900px) {
+    .title {
+      h1 {
+        font-size: 30px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .containerSkills {
+      width: 100%;
+      max-width: 1156px;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffb400;
+        margin-bottom: 15px;
+      }
+
+      li {
+        font-size: 13px !important;
+      }
+    }
+  }
+`;
