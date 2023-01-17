@@ -67,7 +67,7 @@ export const Container = styled.div`
       }
       a {
         text-decoration: none;
-        color: #ffb400;
+        color: #8e01a7;
         width: 50px;
         height: 50px;
       }
@@ -105,7 +105,7 @@ export const Container = styled.div`
           font-size: 30px;
           line-height: 57px;
           font-weight: 700;
-          color: #ffb400;
+          color: #8e01a7;
         }
 
         p {

@@ -109,7 +109,7 @@ export const Container = styled.div`
             font-weight: 400;
             text-align: center;
             span {
-              color: #ffb400;
+              color: #8e01a7;
             }
           }
           .homeDescription {
@@ -136,7 +136,7 @@ export const Container = styled.div`
           h1 {
             line-height: 2.2rem;
             font-size: 13px;
-            color: #ffb400;
+            color: #8e01a7;
             font-weight: normal;
             margin: 16px 0px 0px 0px;
           }

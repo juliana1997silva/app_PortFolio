@@ -97,7 +97,7 @@ export const Container = styled.section`
       h1 {
         font-size: 20px;
         font-weight: 700;
-        color: #ffb400;
+        color: #8e01a7;
         margin-bottom: 15px;
       }
 

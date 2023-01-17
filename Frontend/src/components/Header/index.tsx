@@ -103,7 +103,7 @@ export default function HeaderTest() {
             onClick: handleDrawerOpen,
           }}
         >
-          <MenuIcon style={{ width: 40, height: 40, color: "#FFB400" }} />
+          <MenuIcon style={{ width: 40, height: 40, color: "#8e01a7" }} />
         </IconButton>
 
         <Drawer
