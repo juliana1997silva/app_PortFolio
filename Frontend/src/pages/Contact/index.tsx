@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
 import Aos from "aos";
 import Swal from "sweetalert2";
+import emailjs from '@emailjs/browser';
 import api from "../../service/api";
 import { Container, ContainerButton } from "./styles";
 import { FormContact } from "./types";
@@ -15,50 +16,47 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormContact>({} as FormContact);
   const form = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
+  function sendEmail(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-    if (
-      formData.name !== "" ||
-      formData.mail !== "" ||
-      formData.message !== "" ||
-      formData.assunto !== ""
-    ) {
-      api
-        .post("/mails", formData)
-        .then((res) => {
-          console.log(res);
-          console.log(res.data);
-          if (res.status === 200) {
-            Swal.fire({
-              icon: "success",
-              title: "E-mail Enviado",
-              text: "Parabens, e-mail enviado com sucesso !",
-            });
-            setUserName("");
-            setMessage("");
-            setUserEmail("");
-            setAssunto("");
-          }
-        })
-        .catch((res) => {
-          console.log(res);
-          if (res.status === 404) {
-            Swal.fire({
-              icon: "error",
-              title: "Tente Novamente",
-              text: "Ocorreu um erro no envio do Email.",
-            });
-          }
-        });
+    console.log('meus dados', {
+        userName,
+        userEmail,
+        message
+    },
+    );
+
+    if (!!userName && !!userEmail && !!message) {
+        if (form.current !== null) {
+            emailjs.sendForm('service_p1n1cu9', 'template_knoojcs', form.current, 'wOqR_S9KIAg1emNeY')
+                .then((result) => {
+                    console.log(result.text);
+                    Swal.fire({
+                      icon: "success",
+                      title: "E-mail Enviado",
+                      text: "Parabens, e-mail enviado com sucesso !",
+                    });
+                    setUserName("");
+                    setMessage("");
+                    setUserEmail("");
+                    setAssunto("");
+                }, (error) => {
+                    console.log(error.text);
+                    Swal.fire({
+                      icon: "error",
+                      title: "E-mail Não Enviado",
+                      text: "Por favor, tente novamente !",
+                    });
+                });
+        }
     } else {
       Swal.fire({
         icon: "error",
-        title: "Tente Novamente",
-        text: "Favor preencher todos os campos",
+        title: "Ocorreu um erro !",
+        text: "Por favor, preencha todos os dados!",
       });
     }
-  };
+};
   useEffect(() => {
     Aos.init({
       duration: 3000,
