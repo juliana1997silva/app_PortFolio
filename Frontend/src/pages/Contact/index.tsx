@@ -1,19 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
 import Aos from "aos";
 import Swal from "sweetalert2";
 import emailjs from '@emailjs/browser';
-import api from "../../service/api";
 import { Container, ContainerButton } from "./styles";
-import { FormContact } from "./types";
 
 const Contact: React.FC = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [assunto, setAssunto] = useState("");
-  const [formData, setFormData] = useState<FormContact>({} as FormContact);
   const form = useRef<HTMLFormElement>(null);
 
   function sendEmail(e: FormEvent<HTMLFormElement>) {
@@ -28,7 +24,7 @@ const Contact: React.FC = () => {
 
     if (!!userName && !!userEmail && !!message) {
         if (form.current !== null) {
-            emailjs.sendForm('service_p1n1cu9', 'template_knoojcs', form.current, 'wOqR_S9KIAg1emNeY')
+            emailjs.sendForm('service_p1n1cu9', 'template_knoojcs', form.current, '2PBerX_y-kDTuru1K')
                 .then((result) => {
                     console.log(result.text);
                     Swal.fire({
@@ -39,7 +35,6 @@ const Contact: React.FC = () => {
                     setUserName("");
                     setMessage("");
                     setUserEmail("");
-                    setAssunto("");
                 }, (error) => {
                     console.log(error.text);
                     Swal.fire({
@@ -62,20 +57,13 @@ const Contact: React.FC = () => {
       duration: 3000,
       mirror: true,
     });
-    setFormData({
-      name: userName,
-      mail: userEmail,
-      message: message,
-      assunto: assunto,
-    });
-  }, [setFormData, userName, userEmail, message, assunto]);
+  }, []);
 
   return (
     <Container
       emailIsFilled={userEmail}
       nameIsFilled={userName}
       messageIsFilled={message}
-      assuntoIsFilled={assunto}
     >
       <ArrowDropDown className="ArrowDropDown" />
       <div className="title">
@@ -90,7 +78,7 @@ const Contact: React.FC = () => {
         data-aos-duration="500"
         data-aos-anchor=".contactAnchor"
       >
-        <form ref={form} onSubmit={handleSubmit} id="formContact">
+        <form ref={form} onSubmit={sendEmail} id="formContact">
           <label>Nome:</label>
           <input
             onChange={(e) => setUserName(e.target.value)}
@@ -106,14 +94,6 @@ const Contact: React.FC = () => {
             type="email"
             name="mail"
             value={userEmail}
-          />
-          <label>Assunto:</label>
-          <input
-            onChange={(e) => setAssunto(e.target.value)}
-            placeholder="Digite o assunto da mensagem"
-            type="text"
-            name="assunto"
-            value={assunto}
           />
           <label>Mensagem:</label>
           <textarea

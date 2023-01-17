@@ -4,7 +4,6 @@ type Props = {
   nameIsFilled: string;
   emailIsFilled: string;
   messageIsFilled: string;
-  assuntoIsFilled: string;
 };
 
 export const Container = styled.div<Props>`
