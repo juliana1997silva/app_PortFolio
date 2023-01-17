@@ -17,14 +17,7 @@ export function Projects() {
       repoDescription:
         "Projeto de controle financeiro para visualizar as despesas e receitas da empresa. Projeto realizado para um processo seletivo em uma pequena empresa",
       repoLink: "https://github.com/juliana1997silva/ProjetoFrancisco",
-    },
-    {
-      id: 2,
-      repoImage: projFrancisco,
-      repoName: "Trucker Pay",
-      repoDescription: "Projeto de APP banco digital.",
-      repoLink: "https://github.com/juliana1997silva/ProjetoTruckerPay",
-    },
+    }
   ];
 
   useEffect(() => {
