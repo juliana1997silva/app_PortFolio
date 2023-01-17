@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [assunto, setAssunto] = useState("");
   const form = useRef<HTMLFormElement>(null);
 
   function sendEmail(e: FormEvent<HTMLFormElement>) {
@@ -18,13 +19,14 @@ const Contact: React.FC = () => {
     console.log('meus dados', {
         userName,
         userEmail,
-        message
+        message,
+        assunto
     },
     );
 
     if (!!userName && !!userEmail && !!message) {
         if (form.current !== null) {
-            emailjs.sendForm('service_p1n1cu9', 'template_knoojcs', form.current, '2PBerX_y-kDTuru1K')
+            emailjs.sendForm('service_tq3450n', 'template_068yw8o', form.current, '2PBerX_y-kDTuru1K')
                 .then((result) => {
                     console.log(result.text);
                     Swal.fire({
@@ -35,6 +37,7 @@ const Contact: React.FC = () => {
                     setUserName("");
                     setMessage("");
                     setUserEmail("");
+                    setAssunto("")
                 }, (error) => {
                     console.log(error.text);
                     Swal.fire({
@@ -84,7 +87,7 @@ const Contact: React.FC = () => {
             onChange={(e) => setUserName(e.target.value)}
             placeholder="Digite seu nome!"
             type="text"
-            name="name"
+            name="nome"
             value={userName}
           />
           <label>Email:</label>
@@ -92,8 +95,16 @@ const Contact: React.FC = () => {
             onChange={(e) => setUserEmail(e.target.value)}
             placeholder="Digite seu email!"
             type="email"
-            name="mail"
+            name="email"
             value={userEmail}
+          />
+          <label>Assunto:</label>
+          <input
+            onChange={(e) => setAssunto(e.target.value)}
+            placeholder="Digite o assunto!"
+            type="text"
+            name="assunto"
+            value={assunto}
           />
           <label>Mensagem:</label>
           <textarea
