@@ -14,14 +14,13 @@ export function AboutMe() {
           <h1>Sobre mim</h1>
           <br />
           <p style={{ marginBottom: 15 }}>
-            Atualmente trabalho como desenvolvedora Front-end na Conecto
-            utilizando a tecnologia ReactJs, TypeScript, Styled-Component e
-            Context-API.
+            Atualmente trabalho como desenvolvedora Front-end
+            utilizando as tecnologias React, TypeScript, Styled-Component, Redux e
+            Context-API e trabalhando tambem no Back-end utilizando a tecnologia Laravel 8
           </p>
 
           <p style={{ marginBottom: 15 }}>
-            Adoro aprender coisas novas, trabalhar em equipe e resolver
-            problemas.
+            Adoro aprender coisas novas, trabalhar em equipe e desenvolver soluções para os clientes.
           </p>
 
           <p>

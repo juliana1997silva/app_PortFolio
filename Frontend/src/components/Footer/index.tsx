@@ -34,7 +34,7 @@ export function Footer() {
       </div>
 
       <h1>
-        © Copyright 2023 - Juliana Silva Jesus. <br />
+        © Copyright 2024 - Juliana Jesus. <br />
         Todos os direitos reservados.
       </h1>
     </Container>

@@ -57,8 +57,8 @@ export function MySkills() {
           <h1>Front-End</h1>
 
           <ul>
-            <li>ReactJS</li>
-            <li>React Native</li>
+            <li>React</li>
+            <li>React-Native</li>
             <li>Typescript</li>
             <li>Redux</li>
             <li>Javascript</li>
@@ -80,7 +80,8 @@ export function MySkills() {
 
           <ul>
             <li>NodeJs</li>
-            <li>PHP (Laravel)</li>
+            <li>Laravel</li>
+            <li>Spring Boot</li>
           </ul>
         </div>
 
@@ -122,7 +123,7 @@ export function MySkills() {
           <ul>
             <li>Jira</li>
             <li>Trello</li>
-            <li>Swegger</li>
+            <li>Swagger</li>
           </ul>
         </div>
       </div>

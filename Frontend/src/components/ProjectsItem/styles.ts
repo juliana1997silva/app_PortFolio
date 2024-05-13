@@ -40,23 +40,12 @@ export const Container = styled.div<Props>`
   .img1 {
     margin-right: 40px;
     ${(props) =>
-      props.repoId === 2
-        ? css`
-            width: 390px;
-            height: 224px;
-            display: flex;
-            justify-content: center;
-            img {
-              width: 110px;
-              height: 100%;
-            }
-          `
-        : css`
-            img {
-              width: 280px;
-              height: 100%;
-            }
-          `}
+      css`
+        img {
+          width: 280px;
+          height: 100%;
+        }
+      `}
   }
 
   .containerFooter {
